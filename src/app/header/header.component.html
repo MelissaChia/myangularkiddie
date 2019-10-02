@@ -1,0 +1,191 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-main ">
+  <div class="container ">
+    <a class="navbar-brand" href="#">Kindergarten</a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link zoom" href="#dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item disabled">
+          <a class="nav-link zoom" href="#mymails">My Kindergarten</a>
+        </li>
+        <li class="nav-item disabled">
+          <a class="nav-link zoom" href="#mycustomers">Event</a>
+        </li>
+        <li class="nav-item disabled">
+          <a class="nav-link zoom" href="#myproducts">Users</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link zoom" href="#hierin">Hi User</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle zoom"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Add Content
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a
+              class="dropdown-item"
+              href="#"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              >Add Kidergarten</a
+            >
+            <a class="dropdown-item" href="#">Add Event</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Add User</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <b> Add Kindergarten</b>
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="exampleInputName">Kindergarden Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            placeholder="Enter Kindergarden Name  "
+            [(ngModel)]="data.name"
+            name="name"
+          />
+
+          <div class="form-group">
+            <label for="exampleInputDescription">Desription</label>
+            <textarea
+              class="form-control"
+              id="exampleInputDescription"
+              rows="3"
+              [(ngModel)]="data.description"
+              name="description"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail">Enter Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail"
+            placeholder="Enter Email"
+            [(ngModel)]="data.email"
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPhone">Enter Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPhone"
+            placeholder="Enter Phone"
+            [(ngModel)]="data.phone"
+            name="phone"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputUrl">Enter Url</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputUrl"
+            placeholder="Enter Url "
+            [(ngModel)]="data.url"
+            name="url"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputOpeningHours">Enter Opening Hours</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputOpeningHours"
+            placeholder="Enter Opening Hours "
+            [(ngModel)]="data.opening_hours"
+            name="openinghours"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputImageUrl">Enter Image Url</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputImageUrl"
+            placeholder="Enter Image Url "
+            [(ngModel)]="data.image_url"
+            name="imageurl"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputLatitude">Enter Latitude</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputLatitude"
+            placeholder="Enter Latitude "
+            [(ngModel)]="data.latitude"
+            name="latitude"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputLongitude">Enter Longitude</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputLongitude"
+            placeholder="Enter Longitude "
+            [(ngModel)]="data.longitude"
+            name="longitude"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="addKindergarten()"
+        >
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
