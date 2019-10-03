@@ -8,6 +8,7 @@ import { MainComponent } from "./main/main.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HttpClientModule } from "@angular/common/http";
 import { LoginComponent } from "./login/login.component";
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LoginComponent } from "./login/login.component";
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    EditComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

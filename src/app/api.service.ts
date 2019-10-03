@@ -27,4 +27,16 @@ export class ApiService {
       data
     );
   }
+
+  getKindergartenById(id) {
+    return this.httpClient.get(
+      "https://kiddiemel.herokuapp.com/api/kindergartens/" + id
+    );
+  }
+  editKindergarten(id, data) {
+    return this.httpClient.post(
+      "https://kiddiemel.herokuapp.com/api/kindergartens/" + id,
+      data
+    );
+  }
 }

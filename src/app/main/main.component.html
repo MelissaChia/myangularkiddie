@@ -139,7 +139,10 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let kindergarten of kindergartens">
+                <tr
+                  *ngFor="let kindergarten of kindergartens"
+                  [routerLink]="['/edit', kindergarten._id]"
+                >
                   <td>{{ kindergarten.name }}</td>
                   <td>{{ kindergarten.description }}</td>
                   <td>{{ kindergarten.opening_hours }}</td>
