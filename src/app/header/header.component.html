@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-main ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-main" *ngIf="isLoggedIn">
   <div class="container ">
     <a class="navbar-brand" href="#">Kindergarten</a>
     <div class="collapse navbar-collapse" id="navbarText">
@@ -38,11 +38,13 @@
               href="#"
               data-toggle="modal"
               data-target="#exampleModal"
-              >Add Kidergarten</a
+              >Add Kindergarten</a
             >
             <a class="dropdown-item" href="#">Add Event</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Add User</a>
+            <a class="dropdown-item" href="#" (click)="loggedOutPressed()"
+              >Log Out</a
+            >
           </div>
         </li>
       </ul>

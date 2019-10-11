@@ -21,6 +21,8 @@ export class EditComponent implements OnInit {
   };
   id;
   success = false;
+  isLoading = false;
+  error = false;
 
   constructor(
     public activatedRoute: ActivatedRoute,
@@ -34,11 +36,19 @@ export class EditComponent implements OnInit {
     });
   }
   updateKindergarten() {
-    this.apiService.editKindergarten(this.id, this.editData).subscribe(resp => {
-      console.log(resp);
-      if (resp["message"] == "Kindergarten succesfully updated!") {
-        this.success = true;
+    this.isLoading = true;
+    this.apiService.editKindergarten(this.id, this.editData).subscribe(
+      resp => {
+        console.log(resp);
+        this.isLoading = false;
+        if (resp["message"] == "Kindergarten succesfully updated!") {
+          this.success = true;
+        }
+      },
+      err => {
+        this.isLoading = false;
+        this.error = true;
       }
-    });
+    );
   }
 }

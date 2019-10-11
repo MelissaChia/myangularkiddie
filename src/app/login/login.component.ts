@@ -22,7 +22,10 @@ export class LoginComponent implements OnInit {
       console.log(resp);
 
       if (resp["success"] == true) {
-        this.router.navigate(["/main"]);
+        let token = resp["token"].split(" ")[1];
+        console.log(token);
+        localStorage.setItem("token", token);
+        window.location.href = "/main";
       }
     });
   }

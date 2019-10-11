@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "../api.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-header",
@@ -19,9 +20,19 @@ export class HeaderComponent implements OnInit {
     longitude: ""
   };
 
-  constructor(public apiService: ApiService) {}
+  isLoggedIn = false;
+  constructor(public apiService: ApiService, public router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem("token") != null) {
+      this.isLoggedIn = true;
+    }
+  }
+
+  loggedOutPressed() {
+    localStorage.removeItem("token");
+    window.location.href = "/main";
+  }
 
   addKindergarten() {
     this.apiService.addKindergarten(this.data).subscribe(resp => {
